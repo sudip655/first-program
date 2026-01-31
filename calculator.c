@@ -5,7 +5,7 @@ int main()
     float num1, num2, result;
     char op;
 
-    printf("Enter an operator (+, -, *, /): ");
+    printf("Enter an operatorr (+, -, *, /): ");
     scanf(" %c", &op);
 
     printf("Enter two numbers: ");
@@ -46,3 +46,4 @@ int main()
 
     return 0;
 }
+
