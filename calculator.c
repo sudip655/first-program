@@ -1,49 +1,47 @@
-#include<stdio.h>
+#include <stdio.h>
+
+float calculate(float a, float b, char operation)
+{
+    switch (operation)
+    {
+        case '+':
+            return a + b;
+
+        case '-':
+            return a - b;
+
+        case '*':
+            return a * b;
+
+        case '/':
+            return a / b;
+
+        default:
+            return 0;
+    }
+}
 
 int main()
 {
-    float num1, num2, result;
-    char op;
+    float first, second;
+    char choice;
 
-    printf("Enter an operatorr (+, -, *, /): ");
-    scanf(" %c", &op);
+    printf("Author Name: Sudip Pandey\n");
 
-    printf("Enter two numbers: ");
-    scanf("%f %f", &num1, &num2);
+    printf("Choose an operator (+, -, *, /): ");
+    scanf(" %c", &choice);
 
-    switch(op)
+    printf("Enter two values: ");
+    scanf("%f %f", &first, &second);
+
+    if (choice == '/' && second == 0)
     {
-        case '+':
-            result = num1 + num2;
-            printf("Result = %.2f\n", result);
-            break;
-
-        case '-':
-            result = num1 - num2;
-            printf("Result = %.2f\n", result);
-            break;
-
-        case '*':
-            result = num1 * num2;
-            printf("Result = %.2f\n", result);
-            break;
-
-        case '/':
-            if(num2 != 0)
-            {
-                result = num1 / num2;
-                printf("Result = %.2f\n", result);
-            }
-            else
-            {
-                printf("Division by zero is not allowed\n");
-            }
-            break;
-
-        default:
-            printf("Enter a valid operator\n");
+        printf("Error: Cannot divide by zero.\n");
+    }
+    else
+    {
+        printf("Answer = %.2f\n", calculate(first, second, choice));
     }
 
     return 0;
 }
-
